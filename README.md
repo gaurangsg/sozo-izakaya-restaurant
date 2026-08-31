@@ -1,6 +1,6 @@
 # Sozo Izakaya Restaurant
 
-The independent website for Sozo Izakaya in Versova, Mumbai.
+The independent website for Sozo Izakaya in Versova, Mumbai — with complete reservation backend, email notifications, and WhatsApp integration.
 
 ## Development
 
