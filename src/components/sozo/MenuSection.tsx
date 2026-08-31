@@ -15,8 +15,9 @@ const images: Record<string, string> = {
 };
 
 export function MenuSection() {
-  const [active, setActive] = useState(menu[0].id);
-  const section = menu.find((m) => m.id === active) ?? menu[0];
+  const [active, setActive] = useState(menu[0]!.id);
+  const section = menu.find((m) => m.id === active) ?? menu[0]!;
+
 
   return (
     <section id="menu" className="border-t border-border bg-card py-24 md:py-32">
