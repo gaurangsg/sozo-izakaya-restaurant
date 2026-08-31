@@ -5,9 +5,9 @@ export const site = {
   jp: "साझा · comfort izakaya",
   address: "Aram Nagar, Versova, Andheri West, Mumbai 400061",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Sozo+Izakaya+Versova",
-  phone: "+91 98200 00000",
-  phoneHref: "tel:+919820000000",
-  whatsappHref: "https://wa.me/919820000000",
+  phone: "+91 90960 01994",
+  phoneHref: "tel:+919096001994",
+  whatsappHref: "https://wa.me/919096001994",
   email: "hello@sozoizakaya.in",
   instagram: "https://www.instagram.com/",
   hours: [

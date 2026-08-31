@@ -28,8 +28,10 @@ const labelClass = "block text-xs font-medium tracking-[0.16em] text-muted-foreg
 export function Reserve() {
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState<null | { name: string; date: string; time: string }>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const raw = Object.fromEntries(form) as Record<string, string>;
@@ -46,6 +48,7 @@ export function Reserve() {
     }
 
     setErrors({});
+    setSubmitError(null);
     const d = parsed.data;
     const message = [
       `Table request for ${site.fullName}`,
@@ -60,9 +63,29 @@ export function Reserve() {
       .filter(Boolean)
       .join("\n");
 
-    window.open(`${site.whatsappHref}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
-    setSent({ name: d.name, date: d.date, time: d.time });
-    e.currentTarget.reset();
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/reservations", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          reservation: d,
+          website: form.get("website")?.toString() ?? "",
+        }),
+      });
+      const result = (await response.json()) as { ok?: boolean; message?: string };
+      if (!response.ok || !result.ok) {
+        throw new Error(result.message ?? "We could not save your request. Please call us instead.");
+      }
+
+      window.open(`${site.whatsappHref}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+      setSent({ name: d.name, date: d.date, time: d.time });
+      e.currentTarget.reset();
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Please call us to make a reservation.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -111,6 +134,13 @@ export function Reserve() {
           )}
 
           <form onSubmit={onSubmit} noValidate className="grid gap-5 sm:grid-cols-2">
+            <input
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="sr-only"
+            />
             <div className="sm:col-span-2">
               <label className={labelClass} htmlFor="name">
                 Name
@@ -205,10 +235,16 @@ export function Reserve() {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="bg-primary px-8 py-4 text-xs font-medium tracking-[0.18em] text-primary-foreground uppercase transition-opacity hover:opacity-90 sm:col-span-2"
             >
-              Request my table
+              {isSubmitting ? "Saving your request..." : "Request my table"}
             </button>
+            {submitError && (
+              <p className="text-sm text-destructive sm:col-span-2" role="alert">
+                {submitError}
+              </p>
+            )}
           </form>
         </div>
       </div>
