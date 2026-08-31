@@ -1,14 +1,20 @@
-# Welcome to your Lovable project
+# Digital Presence Perfected
+
+Create a modern , professional website for this business using the information below . Make it clean , visually appealing , mobile - friendly , and focused on converting visitors into customers . Include all relevant services , business information , clear call to action , and a booking / contact session.   
+
+Everything will be done in one go , everything should be perfect!
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://web-sparkle-studio-109.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/b221f41a-d913-4a67-8094-afc3777044eb).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +26,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
