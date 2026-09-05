@@ -2,7 +2,7 @@ export const site = {
   name: "Sozo",
   fullName: "Sozo Izakaya — Versova",
   tagline: "ramens, sushi, baogers and more",
-  jp: "साझा · comfort izakaya",
+  jp: "सोझो · comfort izakaya",
   address: "Aram Nagar, Versova, Andheri West, Mumbai 400061",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Sozo+Izakaya+Versova",
   phone: "+91 90960 01994",
