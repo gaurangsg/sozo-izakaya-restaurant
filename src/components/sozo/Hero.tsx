@@ -34,7 +34,7 @@ export function Hero() {
             href="#menu"
             className="border border-border px-8 py-4 text-center text-xs font-medium tracking-[0.18em] text-foreground uppercase transition-colors hover:bg-secondary"
           >
-            See the menu
+            See the Menu
           </a>
         </div>
 
