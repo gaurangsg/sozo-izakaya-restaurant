@@ -15,7 +15,7 @@ export function Hero() {
       <div className="veil absolute inset-0" />
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-end px-5 pt-32 pb-16 md:px-8 md:pb-24">
-        <p className="eyebrow">Versova · Andheri West · Mumbai</p>
+        <p className="eyebrow">Versova · West Andhery · Mumbai</p>
         <h1 className="wordmark mt-5 text-6xl leading-none text-foreground sm:text-8xl md:text-[9rem]">
           Sozo
         </h1>
