@@ -1,9 +1,12 @@
-# Sozo Izakaya Restaurant
+🍣 SOZO IZAKAYA RESTAURANT | 🌐 Live Website | 2026
 
-The independent website for Sozo Izakaya in Versova, Mumbai — with complete reservation backend, email notifications, and WhatsApp integration.
+- 🍽️ Developed a dedicated full-stack restaurant website for Sozo Izakaya, located in Versova, Mumbai, providing customers with an engaging digital experience and seamless restaurant reservation functionality.
+- ⚛️ Built the application using TypeScript and TanStack Start, developing structured, reusable frontend components and integrating server-side functionality for efficient application workflows.
+- 📅 Engineered a complete reservation management backend with SQLite persistence, enabling reliable reservation submissions and structured booking data management.
+- 📧 Integrated email notifications and WhatsApp connectivity to streamline reservation communication and improve customer interaction and restaurant coordination.
+- 🚀 Configured production deployment using Vercel, delivering a publicly accessible restaurant website with integrated frontend and backend functionality.
 
 ## Development
-
 You need Node.js 20+ and npm.
 
 ```sh
